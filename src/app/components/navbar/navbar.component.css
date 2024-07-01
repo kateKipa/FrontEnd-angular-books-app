@@ -1,0 +1,15 @@
+.my-color {
+    background-color: rgb(202, 168, 133, 0.8); 
+    font-family: "Playwrite AU VIC", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.my-color-dropdown {
+    background-color: rgba(184, 147, 120, 0.9); 
+    font-family: "Playwrite AU VIC", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

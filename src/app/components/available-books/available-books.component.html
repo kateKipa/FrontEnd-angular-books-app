@@ -1,0 +1,9 @@
+<div class="w-100">
+    <div class="input-group w-50 mb-5">
+        <span class="input-group-text" id="basic-addon3">Search a Book</span>
+        <input type="text" class="form-control" placeholder="Search by title" (input)="onSearch($event)" />
+      </div>
+    
+    <app-available-book-table (bookClicked)="onBookClicked($event)" [books]="filteredBooks"></app-available-book-table>
+
+</div>

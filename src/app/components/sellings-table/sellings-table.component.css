@@ -1,0 +1,88 @@
+.hover-button-approval {
+    position: relative;
+    font-size: 14px;
+  }
+  
+  .hover-button-approval::after {
+    content: "Approve";
+    visibility: hidden;
+    opacity: 0;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the button */
+    left: 50%;
+  }
+  
+  .hover-button-approval::before {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .hover-button-approval:hover::after,
+  .hover-button-approval:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hover-button-reject {
+    position: relative;
+    font-size: 14px;
+  }
+  
+  .hover-button-reject::after {
+    content: "Reject";
+    visibility: hidden;
+    opacity: 0;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the button */
+    left: 50%;
+  }
+  
+  .hover-button-reject::before {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .hover-button-reject:hover::after,
+  .hover-button-reject:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .signup-text {
+    color: rgba(69, 57, 46, 0.912); 
+    
+    
+}
+a:hover {
+    color: rgb(167, 125, 82);
+}
+
+.my-button {
+    background-color: rgb(202, 168, 133)
+}
+
+.success-text {
+    color: rgb(181, 135, 90);
+}
+
+.book-details {
+    background-color:rgb(200, 160, 130, 08);
+}
+
+.my-style {
+    font-family: "Caveat", cursive;
+}

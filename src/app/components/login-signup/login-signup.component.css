@@ -1,0 +1,16 @@
+.signup-text {
+    color: rgba(69, 57, 46, 0.912); 
+    
+    
+}
+a:hover {
+    color: rgb(167, 125, 82);
+}
+
+.my-button {
+    background-color: rgb(202, 168, 133)
+}
+
+.success-text {
+    color: rgb(181, 135, 90);
+}

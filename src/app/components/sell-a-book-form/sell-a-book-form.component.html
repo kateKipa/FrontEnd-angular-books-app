@@ -1,0 +1,99 @@
+<h4 class="mb-4">Add a book that you don't need anymore </h4>
+
+<form [formGroup]="form"
+(ngSubmit)="onSubmit()"
+class="d-flex flex-column gap-3 w-50">
+
+<div class="form-group">
+    <label for="title">Title of the Book</label>
+    <input type="text" id="title" class="form-control" formControlName="title">
+</div>
+
+<div class="form-group">
+    <label for="author">Author of the Book</label>
+    <input type="text" id="author" class="form-control" formControlName="author">
+</div>
+
+<div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" id="description" class="form-control" formControlName="description">
+</div>
+
+<div class="form-group">
+    <label class="w-25" for="bookCategory">Category</label>
+    <select id="bookCategory" class="form-select w-25" formControlName="bookCategory">
+        <option value="" disabled selected>Choose...</option>
+        @for (category of categories; track category) {
+            <option [value]="category.key">{{ category.value }}</option>
+        }
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label class="w-25" for="conditionOfBook">Condition of the Book</label>
+    <select id="conditionOfBook" class="form-select w-25" formControlName="conditionOfBook">
+        <option value="" selected>Choose...</option>
+        @for (condition of conditions; track condition) {
+            <option [value]="condition.key">{{ condition.value }}</option>
+        }
+    </select>
+</div>
+
+<div class="form-group">
+    <label class="w-25" for="typeOfTransaction">Type of Transaction</label>
+    <select id="typeOfTransaction" class="form-select w-25" formControlName="typeOfTransaction" (change)="onSelect($event)" >
+        <option value="" disabled selected>Choose...</option>
+        @for (type of types; track type) {
+            <option [value]="type.key">{{ type.value }}</option>
+        }
+    </select>
+</div>
+
+
+    <div class="form-group">
+        <label for="price">Price</label>
+    <input type="number" id="price" class="form-control" formControlName="price" step="0.01" (change)="onFree($event)">
+    </div>
+
+
+<div class="form-group">
+    <label class="w-25" for="paymentMethod">Prefered payment method</label>
+    <select id="paymentMethod" class="form-select w-25" formControlName="paymentMethod">
+        <option value="" selected>Choose...</option>
+        @for (method of methods; track method) {
+            <option [value]="method.key">{{ method.value }}</option>
+        }
+        
+    </select>
+</div>
+
+
+<button type="submit" class="btn my-button" [disabled]="!form.valid">Add Book</button>
+
+</form>
+
+@if(successInAddingBook == 'fail') {
+    <div class="mt-4">
+        <span class="text-danger fs-5">Errors: </span>
+        <span>{{errorMessage}}</span>
+    </div>
+}
+ @else {
+@if (successInAddingBook == 'success') {
+    <div class="mt-3">
+        <span class="fs-6" >
+        <span class="fw-semibold success-text">Book Added Successfully</span> 
+        <p><strong>Title:</strong> {{ addedBook.book.title }}</p>
+        <p><strong>Author:</strong> {{ addedBook.book.author }}</p>
+        <p><strong>Description:</strong> {{ addedBook.book.description }}</p>
+        <p><strong>Category:</strong> {{ addedBook.book.bookCategory }}</p>
+        <p><strong>Condition:</strong> {{ addedBook.conditionOfBook }}</p>
+        <p><strong>Type of Transaction:</strong> {{ addedBook.typeOfTransaction }}</p>
+        <p><strong>Price:</strong> {{ addedBook.price }}</p>
+        <p><strong>Payment Method:</strong> {{ addedBook.paymentMethod }}</p>
+        </span>
+    </div>
+    }
+}
+

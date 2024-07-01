@@ -1,0 +1,57 @@
+@if (!book) {
+    <div class="btn book-details text-center my-style">No book details!</div>
+  } @else {
+    <table class="table table-bordered my-style">
+      <caption class="caption-top fw-medium book-details text-light text-center">
+        Book Details
+      </caption>
+      <tr>
+        <td class="signup-text fw-medium text-end">Title:</td>
+        <td class="ps-2 success-text">{{ book.title }}</td>
+      </tr>
+      <tr>
+        <td class="signup-text fw-medium text-end">Author:</td>
+        <td class="ps-2 success-text">{{ book.author }}</td>
+      </tr>
+      @if (book.description) {
+        <tr>
+            <td class="signup-text fw-medium text-end">Description:</td>
+            <td class="ps-2 success-text">{{ book.description }}</td>
+          </tr>
+      }
+      <tr>
+        <td class="signup-text fw-medium text-end">Category:</td>
+        <td class="ps-2 success-text">{{ book.bookCategory }}</td>
+      </tr>
+      @if (book.conditionOfBook) {
+      <tr>
+        <td class="signup-text fw-medium text-end">Condition of book:</td>
+        <td class="ps-2 success-text">{{ book.conditionOfBook }}</td>
+      </tr>
+    }
+      <tr>
+        <td class="signup-text fw-medium text-end">Type of Transaction:</td>
+        <td class="ps-2 success-text">{{ book.typeOfTransaction }}</td>
+      </tr>
+      <tr>
+        <td class="signup-text fw-medium text-end">Price:</td>
+        <td class="ps-2 success-text">{{ book.price }}</td>
+      </tr>
+      @if (book.paymentMethod) {
+        <tr>
+            <td class="signup-text fw-medium text-end">Payment method:</td>
+            <td class="ps-2 success-text">{{ book.paymentMethod }}</td>
+          </tr>
+      }
+      <tr>
+        <td class="signup-text fw-medium text-end">Seller username:</td>
+        <td class="ps-2 success-text">{{ book.seller.username }}</td>
+      </tr>
+      <tr>
+        <td class="signup-text fw-medium text-end">Seller name:</td>
+        <td class="ps-2 success-text">{{ book.seller.firstname}} {{ book.seller.lastname}}</td>
+      </tr>
+      
+    </table>
+  }
+  

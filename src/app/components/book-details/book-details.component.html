@@ -1,0 +1,30 @@
+<div>
+    <p>You have choosen to 
+        @if (book.typeOfTransaction == 'Sale') {
+            {{'buy'}}
+        }@else if (book.typeOfTransaction == 'Free') {
+            {{"accept for free"}}
+        } the Book:   
+        <span class="success-text fs-5">{{book.title}}</span>.</p>
+</div>
+<div class="mt-5">
+    <p class="success-text fs-5">Book Information</p>
+    <p>Title of the Book: <span class="success-text">{{book.title}}</span></p>
+    <p>Author of the Book: <span class="success-text">{{book.author}}</span></p>
+    <p>Description: <span class="success-text">{{book.description}}</span></p>
+    <p>Category: <span class="success-text">{{book.bookCategory}}</span></p>
+    <p>Type of transaction: <span class="success-text">{{book.typeOfTransaction}}</span></p>
+    <p>Price: <span class="success-text">{{book.price}}</span></p>
+    <p>Payment Method: <span class="success-text">{{ book.paymentMethod ? book.paymentMethod : 'undetermined'}}</span> </p>
+    <p>Seller username: <span class="success-text">{{book.seller.username}}</span></p>
+    <p>Seller name: <span class="success-text">{{book.seller.firstname}} {{book.seller.lastname}}</span></p>
+</div>
+
+<div class="d-grid gap-2 d-md-block">
+
+<button type="submit" class="btn my-button mt-3 align-self-center" (click)="askForBuying(book)" >I want it !</button>
+
+<button type="button" class="btn my-btn-delete ms-5 mt-3 align-self-center" (click)="onClickedCancel()">Cancel</button>
+
+</div>
+

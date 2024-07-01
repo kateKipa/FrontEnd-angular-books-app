@@ -1,0 +1,24 @@
+.signup-text {
+    color: rgba(69, 57, 46, 0.912); 
+    
+    
+}
+a:hover {
+    color: rgb(167, 125, 82);
+}
+
+.my-button {
+    background-color: rgb(202, 168, 133)
+}
+
+.success-text {
+    color: rgb(181, 135, 90);
+}
+
+.book-details {
+    background-color:rgb(200, 160, 130, 08);
+}
+
+.my-style {
+    font-family: "Caveat", cursive;
+}

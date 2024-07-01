@@ -1,0 +1,52 @@
+
+
+<div class="d-flex flex-row-reverse">
+    <a role="button" routerLink="/user-data-update"
+    class="d-inline-flex py-1 px-2 text-decoration-none rounded-3 my-color"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-lines-fill me-2" viewBox="0 0 16 16">
+        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+    </svg>Your details</a>
+</div>
+
+<div>
+    @for(book of readyForTradingBooks; track book) {
+        <div>
+            <h3 class="my-text">We have good news !</h3>
+            <p>
+                The user with username: <span class="my-text fs-5">{{book.seller.username}}</span>  has approve your request for buying/accepting their book <span class="my-text fs-5">{{book.title}}</span>.
+            </p>
+            <span class="text-decoration-underline">Contact Details:</span>
+            <p>Username: <span class="my-text">{{book.seller.username}}</span></p>
+            <p>Fullname: <span class="my-text">{{book.seller.firstname}} {{book.seller.lastname}}</span></p>
+            <p>Phone Number: <span class="my-text">{{book.seller.phoneNumber}}</span></p>
+            <p>Email: <span class="my-text">{{book.seller.email}}</span></p>
+            <span class="text-decoration-underline">Book Details:</span>
+            <p>Title: <span class="my-text">{{book.title}}</span></p>
+            <p>Author: <span class="my-text">{{book.author}}</span></p>
+            <p>Category: <span class="my-text">{{book.BookCategory}}</span></p>
+            <p>Condition of Book: <span class="my-text">{{book.conditionOfBook}}</span></p>
+            <p>Price: <span class="my-text">{{book.price}}</span></p>
+        </div>
+        <div class="d-inline"> <span>When you recieve the book please notice here:</span>
+        <button type="submit" class="btn my-button ms-3 mt-2 mb-3 border-danger align-self-center" (click)="confirmReceived(book)">I recieve the Book !</button>
+        </div>
+    }
+</div>
+
+<h4 class="mb-3 mt-4">Books requiring approval</h4>
+
+<app-sellings-table [booksForApproval]="true" [sellerBuyer]="userBuyer" [tableBooks]="approvalBooks"></app-sellings-table>
+
+<h4 class="mb-3 mt-5 pt-3">Books you have ask for approval</h4>
+
+<app-sellings-table [booksForAskingApproval]="true" [sellerBuyer]="userSeller" [tableBooks]="askingApprovalBooks"></app-sellings-table>
+
+<h4 class="mb-3 mt-5 pt-3">Books you have accepted</h4>
+
+<app-sellings-table [sellerBuyer]="seller" [tableBooks]="accBooks"></app-sellings-table>
+    
+<h4 class="mb-3 mt-5 pt-3">Books you have given</h4>
+
+<app-sellings-table  [sellerBuyer]="buyer" [tableBooks]="givenBooks"></app-sellings-table>
+
+
+    

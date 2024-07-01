@@ -1,0 +1,84 @@
+<h4 class="mb-4">Your Details</h4>
+
+<form [formGroup]="userForm"
+(ngSubmit)="onSubmit()"
+class="d-flex flex-column gap-3 w-50">
+
+<div class="d-inline-flex">
+    <div class="form-group me-3">
+        <label for="firstname">Your Firstname</label>
+        <input type="text" id="firstname" class="form-control" formControlName="firstname">
+    </div>
+    
+    <div class="form-group">
+        <label for="lastname">Your lastname</label>
+        <input type="text" id="lastname" class="form-control" formControlName="lastname">
+    </div>
+</div>
+
+<div class="form-group w-50">
+    <label for="email">Your email</label>
+    <input type="text" id="email" class="form-control" formControlName="email">
+</div>
+
+<div class="d-inline-flex">
+    <div class="form-group me-3">
+        <label for="username">Your Username</label>
+        <input type="text" id="username" class="form-control" formControlName="username">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Your password</label>
+        <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+</div>
+
+<div class="d-inline-flex">
+    <div class="form-group me-3">
+        <label for="phoneNumber">Your phone number</label>
+        <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber">
+    </div>
+    
+    <div class="form-group">
+        <label for="city">Your city</label>
+        <input type="text" id="city" class="form-control" formControlName="city">
+    </div>
+</div>
+
+<div class="d-inline-flex">
+    <div class="form-group me-3">
+        <label for="address">Your address</label>
+        <input type="text" id="address" class="form-control" formControlName="address">
+    </div>
+    
+    <div class="form-group">
+        <label for="number">Your address number</label>
+        <input type="text" id="number" class="form-control" formControlName="number">
+    </div>
+</div>
+
+<button type="submit" class="btn my-button w-25 mt-3 align-self-center" [disabled]="!userForm.valid">Modify your details</button>
+
+<button type="button" class="btn my-btn-delete w-25 align-self-center" (click)="showDeleteConfirmation()">Delete Account</button>
+
+</form>
+
+
+@if(successInFetchingData == 'fail') {
+    <div class="mt-4">
+        <span class="text-danger fs-5">Errors: </span>
+        <span>{{errorMessage}}</span>
+    </div>
+}
+
+@if (successInUpdate == 'success') {
+    <div class="mt-4"> {{updateMessage}}</div>    
+}@else if (successInUpdate == 'fail') {
+    <div class="mt-4">
+        <span class="text-danger fs-5">Errors: </span>
+        <span>{{updateMessage}}: </span>
+        <span> {{errorMessage}}</span>
+    </div>
+}
+
+  
